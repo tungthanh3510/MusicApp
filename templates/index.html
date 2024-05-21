@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Music List</title>
+</head>
+
+<body>
+    <h1>Music List</h1>
+    <ul>
+        {% for music in musics %}
+        <!-- {% if %} -->
+        <li>
+            <h2>{{ music.name_music }}</h2>
+            <p>Artist: {{ music.name_singer_music }}</p>
+            <p>Release Year: {{ music.release_year_music }}</p>
+            <p>Price: ${{ music.price_music }}</p>
+            <p>Genre: {{ music.get_genre_music_display }}</p>
+            <p>Status: {{ music.status_music }}</p>
+            {% if music.image_music %}
+            <img src="{{ music.image_music }}" alt="{{ music.name_music }}" width="100" height="100">
+            {% endif %}
+            {% if music.music %}
+            <audio controls>
+                <source src="{{ music.music }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
