@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Use the correct Python version
-python -m venv .venv
+#python -m venv .venv
 
 # Activate the virtual environment
-source .venv/bin/activate
+#source .venv/bin/activate
 
 # Upgrade pip
 pip install --upgrade pip
